@@ -1,37 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Drawing.Imaging;
+﻿using System.Drawing;
 
 namespace GameAsteroids2
 {
-    class BaseObject
+    abstract class BaseObject : ICollision
     {
         protected Point Pos;
         protected Point Dir;
         protected Size Size;
-        public BaseObject(Point pos, Point dir, Size size)
+
+        /// <summary>
+        /// Creates object with pointer params.
+        /// Создает объект с заданными параметрами.
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="dir"></param>
+        /// <param name="size"></param>
+        protected BaseObject(Point pos, Point dir, Size size)
         {
+            if (pos.X < 0 || pos.X > Game.Width || pos.Y < 0 || pos.Y > Game.Height)
+            {
+                throw new GameObjectException("Неверная позиция.");
+            }
             Pos = pos;
+            if (dir.X < -15 || dir.X > 15 || dir.Y < -15 || dir.Y > 15)
+            {
+                throw new GameObjectException("Слишком большая скорость.");
+            }
             Dir = dir;
+            if (size.Width < 0 || size.Width > 200 || size.Height < 0 || size.Height > 200)
+            {
+                throw new GameObjectException("Неверный размер объекта.");
+            }
             Size = size;
         }
-        public virtual void Draw()
-        {
-            Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
 
-        }
-        public virtual void Update()
-        {
-            Pos.X = Pos.X + Dir.X;
-            Pos.Y = Pos.Y + Dir.Y;
-            if (Pos.X < 0) Dir.X = -Dir.X;
-            if (Pos.X + Size.Width > Game.Width) Dir.X = -Dir.X;
-            if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y + Size.Height > Game.Height) Dir.Y = -Dir.Y;
-        }
-    }
+        public Rectangle Rect => new Rectangle(Pos, Size);
+
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+
+        public abstract void Draw();
+
+        public abstract void Update();
+
+        
+    }
+
 }

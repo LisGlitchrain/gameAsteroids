@@ -14,27 +14,34 @@ namespace GameAsteroids2
         Image animation;
         int activeFrame;
         int framesCount;
+        int frameSkipper;
         FrameDimension dimension;
+        Rectangle destRect;
 
         public AnimatedObject(Point pos, Point dir, Size size, Image animation) : base(pos, dir, size)
         {
             this.animation = animation;
             dimension = new FrameDimension(animation.FrameDimensionsList[0]);
             activeFrame = 0;
+            frameSkipper = 0;
             framesCount = animation.GetFrameCount(dimension);
+            destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);
         }
         
         public override void Draw()
         {
-            Rectangle destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);
+            destRect.X = Pos.X;
+            destRect.Y = Pos.Y;
             Game.Buffer.Graphics.DrawImage(animation, destRect);
         }
 
         public override void Update()
         {
+            frameSkipper++;
+            if (frameSkipper > 10) frameSkipper = 0;
             if (activeFrame < framesCount - 1)
             {
-                activeFrame ++;
+                if (frameSkipper == 0) activeFrame ++;
             }
             else
             {

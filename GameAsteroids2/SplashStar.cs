@@ -9,23 +9,47 @@ namespace GameAsteroids2
 {
     class SplashStar: SplashBaseObj
     {
+        SolidBrush myBrush;
+        Rectangle destRect;
+        static int DEFAULT_ALPHA = 255;
+        static int DEFAULT_RED = 20;
+        static int DEFAULT_GREEN = 20;
+        static int DEFAULT_BLUE = 50;
+
+        /// <summary>
+        /// Creates star object.
+        /// Создает объект звезды.
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="dir"></param>
+        /// <param name="size"></param>
         public SplashStar(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
+            myBrush = new SolidBrush(Color.FromArgb(DEFAULT_ALPHA, DEFAULT_RED * Size.Height, DEFAULT_GREEN * Size.Height, DEFAULT_BLUE * Size.Height));
+            destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);
         }
 
+        /// <summary>
+        /// Draws star.
+        /// Отрисовывает звезду.
+        /// </summary>
         public override void Draw()
         {
-            //Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
-            //Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
-            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.FromArgb(255, 20 * Size.Height, 20 * Size.Height, 50 * Size.Height));
 
-            SplashScreen.Buffer.Graphics.FillRectangle(myBrush, new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height));
+            destRect.X = Pos.X;
+            destRect.Y = Pos.Y;
+            SplashScreen.Buffer.Graphics.FillRectangle(myBrush, destRect);
         }
-
+        /// <summary>
+        /// Updates position of the star.
+        /// Обновляет позицию звезды.
+        /// </summary>
         public override void Update()
         {
-            Pos.X = Pos.X - Dir.X;
+            Pos.X -= Dir.X;
             if (Pos.X < 0) Pos.X = SplashScreen.Width + Size.Width;
         }
+
+        
     }
 }

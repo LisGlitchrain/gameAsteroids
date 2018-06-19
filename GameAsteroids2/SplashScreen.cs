@@ -13,7 +13,7 @@ namespace GameAsteroids2
         private static BufferedGraphicsContext _context;
         public static BufferedGraphics Buffer;
         public static SplashBaseObj[] _objs;
-
+        static Timer timer;
 
         // Свойства
         // Ширина и высота игрового поля
@@ -24,8 +24,14 @@ namespace GameAsteroids2
         {
         }
 
+        /// <summary>
+        /// Initialize splash screen.
+        /// Инициализация заставки.
+        /// </summary>
+        /// <param name="form"></param>
         public static void Init(Form form)
         {
+                    
             // Графическое устройство для вывода графики
             Graphics g;
             // Предоставляет доступ к главному буферу графического контекста для текущего приложения
@@ -40,11 +46,15 @@ namespace GameAsteroids2
 
             Load();
 
-            Timer timer = new Timer { Interval = 25 };
+            timer = new Timer { Interval = 100 };
             timer.Start();
             timer.Tick += Timer_Tick;
         }
 
+        /// <summary>
+        /// Creates of visual resources.
+        /// Создает визуальные ресурсы.
+        /// </summary>
         public static void Load()
         {
             _objs = new SplashBaseObj[90];
@@ -54,11 +64,17 @@ namespace GameAsteroids2
             for (int i = 0; i < 90; i++)
             {
                 var definitiveValue = r.Next(1, 5);
-                _objs[i] = new SplashStar(new Point(r.Next(1, 800), r.Next(1, 600)), new Point(definitiveValue, r.Next(-4, 4)), new Size(definitiveValue, definitiveValue));
+                _objs[i] = new SplashStar(new Point(r.Next(1, 800), r.Next(1, 600)), 
+                                          new Point(definitiveValue, r.Next(-4, 4)), 
+                                          new Size(definitiveValue, definitiveValue));
             }
 
         }
 
+        /// <summary>
+        /// Draws graphics.
+        /// Отрисовывает графику.
+        /// </summary>
         public static void Draw()
         {
             // Проверяем вывод графики
@@ -71,6 +87,10 @@ namespace GameAsteroids2
             Buffer.Render();
         }
 
+        /// <summary>
+        /// Computates new positions of the objects on the screen.
+        /// Вычисляет новые позиции объектов на экране.
+        /// </summary>
         public static void Update()
         {
             foreach (SplashBaseObj obj in _objs)
@@ -82,6 +102,20 @@ namespace GameAsteroids2
         {
             Draw();
             Update();
-        }
-    }
+        }
+
+        /// <summary>
+        /// Stops splash screen and frees graphic resources.
+        /// Останавливает отрисовку заставки и освобождает ресурсы.
+        /// </summary>
+        public static void SplashScreenStop()
+        {
+            timer.Dispose();
+            _objs = null;
+            _context.Dispose();
+            Buffer.Dispose();
+        }
+
+    }
+
 }

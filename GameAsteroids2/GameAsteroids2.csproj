@@ -46,8 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimatedObject.cs" />
+    <Compile Include="ArgOutOfRangeException.cs" />
+    <Compile Include="Asteroid.cs" />
     <Compile Include="Asteroids.cs" />
     <Compile Include="BaseObject.cs" />
+    <Compile Include="Bullet.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +58,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="GameObjectException.cs" />
+    <Compile Include="ICollision.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
