@@ -68,6 +68,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Score.cs" />
+    <Compile Include="Ship.cs" />
     <Compile Include="SplashBaseObj.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="SplashStar.cs" />
@@ -115,6 +117,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GeekBrains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BatteryTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GunSound1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletCollision.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8bit adventures for Asteroids.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

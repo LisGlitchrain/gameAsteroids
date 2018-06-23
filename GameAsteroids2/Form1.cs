@@ -8,22 +8,24 @@ namespace GameAsteroids2
         public Form1()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
-        private void startGameBtn_Click(object sender, EventArgs e)
+
+        private void startLabel_Click(object sender, EventArgs e)
         {
             SplashScreen.SplashScreenStop();
             Form form2 = FindForm();
-            exitBtn.Hide();
-            recordsBtn.Hide();
-            this.startGameBtn.Hide();
+            exitLabel.Hide();
+            recordsLabel.Hide();
+            this.startLabel.Hide();
             pictureBox1.Hide();
             try
             {
                 if (form2.Width > 1000 || form2.Width < 0 || form2.Height > 1000 || form2.Height < 0)
                 {
                     throw new ArgOutOfRangeException("Недопустимое значение размера окна");
-                    
+
                 }
                 Game.Init(form2);
             }
@@ -35,8 +37,9 @@ namespace GameAsteroids2
             Game.Draw();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+            Game.StreamWriterClose();
             Environment.Exit(0);
         }
     }

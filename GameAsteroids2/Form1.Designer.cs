@@ -28,41 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.startGameBtn = new System.Windows.Forms.Button();
-            this.recordsBtn = new System.Windows.Forms.Button();
-            this.exitBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.startLabel = new System.Windows.Forms.Label();
+            this.exitLabel = new System.Windows.Forms.Label();
+            this.recordsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // startGameBtn
-            // 
-            this.startGameBtn.Location = new System.Drawing.Point(45, 322);
-            this.startGameBtn.Name = "startGameBtn";
-            this.startGameBtn.Size = new System.Drawing.Size(75, 23);
-            this.startGameBtn.TabIndex = 0;
-            this.startGameBtn.Text = "Начать";
-            this.startGameBtn.UseVisualStyleBackColor = true;
-            this.startGameBtn.Click += new System.EventHandler(this.startGameBtn_Click);
-            // 
-            // recordsBtn
-            // 
-            this.recordsBtn.Location = new System.Drawing.Point(45, 352);
-            this.recordsBtn.Name = "recordsBtn";
-            this.recordsBtn.Size = new System.Drawing.Size(75, 23);
-            this.recordsBtn.TabIndex = 1;
-            this.recordsBtn.Text = "Рекорды";
-            this.recordsBtn.UseVisualStyleBackColor = true;
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.Location = new System.Drawing.Point(45, 382);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(75, 23);
-            this.exitBtn.TabIndex = 2;
-            this.exitBtn.Text = "Выход";
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // pictureBox1
             // 
@@ -74,29 +45,67 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // startLabel
+            // 
+            this.startLabel.AutoSize = true;
+            this.startLabel.BackColor = System.Drawing.SystemColors.WindowText;
+            this.startLabel.Font = new System.Drawing.Font("Pixel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.startLabel.Location = new System.Drawing.Point(42, 325);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(62, 14);
+            this.startLabel.TabIndex = 4;
+            this.startLabel.Text = "START";
+            this.startLabel.Click += new System.EventHandler(this.startLabel_Click);
+            // 
+            // exitLabel
+            // 
+            this.exitLabel.AutoSize = true;
+            this.exitLabel.BackColor = System.Drawing.SystemColors.WindowText;
+            this.exitLabel.Font = new System.Drawing.Font("Pixel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.exitLabel.Location = new System.Drawing.Point(42, 372);
+            this.exitLabel.Name = "exitLabel";
+            this.exitLabel.Size = new System.Drawing.Size(45, 14);
+            this.exitLabel.TabIndex = 5;
+            this.exitLabel.Text = "EXIT";
+            this.exitLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // recordsLabel
+            // 
+            this.recordsLabel.AutoSize = true;
+            this.recordsLabel.BackColor = System.Drawing.SystemColors.WindowText;
+            this.recordsLabel.Font = new System.Drawing.Font("Pixel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordsLabel.ForeColor = System.Drawing.SystemColors.Window;
+            this.recordsLabel.Location = new System.Drawing.Point(42, 348);
+            this.recordsLabel.Name = "recordsLabel";
+            this.recordsLabel.Size = new System.Drawing.Size(119, 14);
+            this.recordsLabel.TabIndex = 6;
+            this.recordsLabel.Text = "HIGH SCORES";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.recordsLabel);
+            this.Controls.Add(this.exitLabel);
+            this.Controls.Add(this.startLabel);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.recordsBtn);
-            this.Controls.Add(this.startGameBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button startGameBtn;
-        private System.Windows.Forms.Button recordsBtn;
-        private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Label exitLabel;
+        private System.Windows.Forms.Label recordsLabel;
     }
 }
 

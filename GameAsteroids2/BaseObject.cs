@@ -8,8 +8,12 @@ namespace GameAsteroids2
         protected Point Dir;
         protected Size Size;
 
+        const int MAX_SPEED = 50;
+        const int MAX_SIZE = 200;
+
         /// <summary>
         /// Creates object with pointer params.
+        /// Throws GameObjectException for invalid values
         /// Создает объект с заданными параметрами.
         /// </summary>
         /// <param name="pos"></param>
@@ -19,15 +23,16 @@ namespace GameAsteroids2
         {
             if (pos.X < 0 || pos.X > Game.Width || pos.Y < 0 || pos.Y > Game.Height)
             {
-                throw new GameObjectException("Неверная позиция.");
+
+                throw new GameObjectException($"Неверная позиция.");
             }
             Pos = pos;
-            if (dir.X < -15 || dir.X > 15 || dir.Y < -15 || dir.Y > 15)
+            if (dir.X < -MAX_SPEED || dir.X > MAX_SPEED || dir.Y < -MAX_SPEED || dir.Y > MAX_SPEED)
             {
                 throw new GameObjectException("Слишком большая скорость.");
             }
             Dir = dir;
-            if (size.Width < 0 || size.Width > 200 || size.Height < 0 || size.Height > 200)
+            if (size.Width < 0 || size.Width > MAX_SIZE || size.Height < 0 || size.Height > MAX_SIZE)
             {
                 throw new GameObjectException("Неверный размер объекта.");
             }

@@ -31,7 +31,7 @@ namespace GameAsteroids2
         /// </summary>
         public override void Update()
         {
-            Pos.X = Pos.X + 3;
+            Pos.X = Pos.X + Dir.X;
             if (Pos.X > Game.Width) Pos.X = 0;
         }
         /// <summary>

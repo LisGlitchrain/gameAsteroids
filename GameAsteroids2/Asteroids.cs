@@ -7,10 +7,10 @@ namespace GameAsteroids2
     {
         Image image;
         Rectangle destRect;
-
+        public int Power { get; set; }
         /// <summary>
-        /// Creates asteroid with random picture.
-        /// Создает астероид с рандомной картинкой.
+        /// Creates asteroid with random picture. And batteries.
+        /// Создает астероид с рандомной картинкой. И батарейки.
         /// </summary>
         /// <param name="pos"></param>
         /// <param name="dir"></param>
@@ -18,16 +18,23 @@ namespace GameAsteroids2
         public Asteroids(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
             Random r = new Random();
-            switch (r.Next(1,3))
+            switch (r.Next(1,4))
             {
                 case 1:
                     image = Resource1.Asteroid1;
+                    Power = 5;
+                    break;
+                case 3:
+                    image = Resource1.BatteryTransparent;
+                    Power = -1;
                     break;
                 default:
                     image = Resource1.Asteroid2;
+                    Power = 5;
                     break;
             }
             destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);
+
         }
 
         /// <summary>
@@ -49,10 +56,10 @@ namespace GameAsteroids2
         {
             Pos.X = Pos.X + Dir.X;
             Pos.Y = Pos.Y + Dir.Y;
-            if (Pos.X < 0) Dir.X = -Dir.X;
-            if (Pos.X + Size.Width > Game.Width) Dir.X = -Dir.X;
-            if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y + Size.Height > Game.Height) Dir.Y = -Dir.Y;
+            if (Pos.X < 0) Pos.X = Game.Width -100;
+            if (Pos.X + Size.Width > Game.Width) Pos.X = 50;
+            if (Pos.Y < 0) Pos.Y = Game.Height - 100;
+            if (Pos.Y + Size.Height > Game.Height) Pos.Y = 50;
         }
 
         /// <summary>

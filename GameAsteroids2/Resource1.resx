@@ -124,13 +124,28 @@
   <data name="Asteroid2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Asteroid2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BatteryTransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BatteryTransparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BulletCollision" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BulletCollision.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GeekBrains" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\GeekBrains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GunSound1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\GunSound1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Planet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Planet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ship" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ship.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sun2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\sun2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8bit_adventures_for_Asteroids" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8bit adventures for Asteroids.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

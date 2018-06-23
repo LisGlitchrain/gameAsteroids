@@ -61,6 +61,15 @@ namespace GameAsteroids2 {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _8bit_adventures_for_Asteroids {
+            get {
+                return ResourceManager.GetStream("_8bit_adventures_for_Asteroids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Asteroid1 {
@@ -83,10 +92,38 @@ namespace GameAsteroids2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BatteryTransparent {
+            get {
+                object obj = ResourceManager.GetObject("BatteryTransparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BulletCollision {
+            get {
+                return ResourceManager.GetStream("BulletCollision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GeekBrains {
             get {
                 object obj = ResourceManager.GetObject("GeekBrains", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream GunSound1 {
+            get {
+                return ResourceManager.GetStream("GunSound1", resourceCulture);
             }
         }
         
@@ -96,6 +133,16 @@ namespace GameAsteroids2 {
         internal static System.Drawing.Bitmap Planet1 {
             get {
                 object obj = ResourceManager.GetObject("Planet1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ship {
+            get {
+                object obj = ResourceManager.GetObject("ship", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
