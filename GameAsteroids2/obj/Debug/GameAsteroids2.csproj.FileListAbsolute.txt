@@ -1,0 +1,11 @@
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\bin\Debug\GameAsteroids2.exe.config
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\bin\Debug\GameAsteroids2.exe
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\bin\Debug\GameAsteroids2.pdb
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.csprojResolveAssemblyReference.cache
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.Form1.resources
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.Properties.Resources.resources
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.Resource1.resources
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.csproj.GenerateResource.cache
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.csproj.CoreCompileInputs.cache
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.exe
+D:\OneDrive\Projects\GeekBrains\C# 2\Lesson1-4\GameAsteroids2\GameAsteroids2\obj\Debug\GameAsteroids2.pdb
