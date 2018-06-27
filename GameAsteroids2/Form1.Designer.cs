@@ -32,6 +32,7 @@
             this.startLabel = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
             this.recordsLabel = new System.Windows.Forms.Label();
+            this.nameBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             this.exitLabel.Size = new System.Drawing.Size(45, 14);
             this.exitLabel.TabIndex = 5;
             this.exitLabel.Text = "EXIT";
-            this.exitLabel.Click += new System.EventHandler(this.label1_Click);
+            this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
             // 
             // recordsLabel
             // 
@@ -82,12 +83,24 @@
             this.recordsLabel.Size = new System.Drawing.Size(119, 14);
             this.recordsLabel.TabIndex = 6;
             this.recordsLabel.Text = "HIGH SCORES";
+            this.recordsLabel.Click += new System.EventHandler(this.recordsLabel_Click);
+            // 
+            // nameBox
+            // 
+            this.nameBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.nameBox.Font = new System.Drawing.Font("Pixel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.nameBox.Location = new System.Drawing.Point(302, 209);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(221, 28);
+            this.nameBox.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.recordsLabel);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.startLabel);
@@ -103,9 +116,10 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label startLabel;
-        private System.Windows.Forms.Label exitLabel;
-        private System.Windows.Forms.Label recordsLabel;
+        public System.Windows.Forms.Label startLabel;
+        public System.Windows.Forms.Label exitLabel;
+        public System.Windows.Forms.Label recordsLabel;
+        public System.Windows.Forms.TextBox nameBox;
     }
 }
 

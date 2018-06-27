@@ -15,14 +15,17 @@ namespace GameAsteroids2
         /// <param name="pos"></param>
         /// <param name="dir"></param>
         /// <param name="size"></param>
-        public Asteroids(Point pos, Point dir, Size size) : base(pos, dir, size)
+        public Asteroids(Point pos, Point dir, Size size, Random r) : base(pos, dir, size)
         {
-            Random r = new Random();
-            switch (r.Next(1,4))
+            switch (r.Next(1,6))
             {
                 case 1:
                     image = Resource1.Asteroid1;
-                    Power = 5;
+                    Power = 50;
+                    break;
+                case 2:
+                    image = Resource1.Asteroid1;
+                    Power = 50;
                     break;
                 case 3:
                     image = Resource1.BatteryTransparent;
@@ -30,7 +33,7 @@ namespace GameAsteroids2
                     break;
                 default:
                     image = Resource1.Asteroid2;
-                    Power = 5;
+                    Power = 50;
                     break;
             }
             destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);

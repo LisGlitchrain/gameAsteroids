@@ -32,7 +32,6 @@ namespace GameAsteroids2
         public override void Update()
         {
             Pos.X = Pos.X + Dir.X;
-            if (Pos.X > Game.Width) Pos.X = 0;
         }
         /// <summary>
         /// Randomly changes bullet position.

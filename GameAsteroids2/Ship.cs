@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace GameAsteroids2
 {
@@ -86,6 +87,13 @@ namespace GameAsteroids2
         /// </summary>
         public void Die()
         {
+            Game.GameStop();
+            SplashScreen.score = new Score();
+            SplashScreen.score.ScoreValue = Game.score.ScoreValue;
+            SplashScreen.ShowHighScores = true;
+            SplashScreen.gameOver = true;
+            SplashScreen.Init(Program.form);
+
         }
     }
 }

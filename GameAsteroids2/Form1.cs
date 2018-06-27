@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GameAsteroids2
 {
@@ -8,38 +9,53 @@ namespace GameAsteroids2
         public Form1()
         {
             InitializeComponent();
-            this.KeyPreview = true;
+            KeyPreview = true;
+            nameBox.Hide();
+            nameBox.KeyDown += new KeyEventHandler(tb_KeyDown);
         }
 
+        private void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                StreamWriter sw = new StreamWriter("highScores.txt");
+                sw.WriteLine($"{nameBox.Text} : {SplashScreen.score.ScoreValue}");
+                sw.Close();
+                nameBox.Hide();
+            }
+        }
 
         private void startLabel_Click(object sender, EventArgs e)
         {
             SplashScreen.SplashScreenStop();
-            Form form2 = FindForm();
+            SplashScreen.ShowHighScores = false;
             exitLabel.Hide();
             recordsLabel.Hide();
-            this.startLabel.Hide();
+            startLabel.Hide();
             pictureBox1.Hide();
             try
             {
-                if (form2.Width > 1000 || form2.Width < 0 || form2.Height > 1000 || form2.Height < 0)
+                if (this.Width > 1000 || this.Width < 0 || this.Height > 1000 || this.Height < 0)
                 {
                     throw new ArgOutOfRangeException("Недопустимое значение размера окна");
 
                 }
-                Game.Init(form2);
+                Game.Init(this);
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgOutOfRangeException)
             {
 
             }
-            //form2.Show();
-            Game.Draw();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void recordsLabel_Click(object sender, EventArgs e)
         {
-            Game.StreamWriterClose();
+            nameBox.Hide();
+            SplashScreen.ShowHighScores = true;
+        }
+
+        private void exitLabel_Click(object sender, EventArgs e)
+        {
             Environment.Exit(0);
         }
     }
