@@ -21,11 +21,11 @@ namespace GameAsteroids2
             {
                 case 1:
                     image = Resource1.Asteroid1;
-                    Power = 50;
+                    Power = 5;
                     break;
                 case 2:
                     image = Resource1.Asteroid1;
-                    Power = 50;
+                    Power = 5;
                     break;
                 case 3:
                     image = Resource1.BatteryTransparent;
@@ -33,7 +33,7 @@ namespace GameAsteroids2
                     break;
                 default:
                     image = Resource1.Asteroid2;
-                    Power = 50;
+                    Power = 5;
                     break;
             }
             destRect = new Rectangle(Pos.X, Pos.Y, Size.Width, Size.Height);
